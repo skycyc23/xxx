@@ -38,7 +38,7 @@
                 $('#mainMenu>ul').first().css('display','block');
                 //第一次进入后台时，默认定到欢迎界面
                 $('#item_welcome').addClass('selected');
-                $('#workspace').attr('src',"<{U('index/index')}>");
+                $('#workspace').attr('src',"<{:U('index/welcome')}>");
             }
             $('#iframe_refresh').click(function(){
                 var fr = document.frames ? document.frames("workspace") : document.getElementById("workspace").contentWindow;;
@@ -206,6 +206,7 @@
 </head>
 
 <body style="min-width: 1200px; margin: 0px; ">
+<!--<iframe id="msg_frm"></iframe>-->
 <div id="pagemask"></div>
 <div id="dialog" style="display:none">
     <div class="title">
@@ -568,7 +569,7 @@
                     <dl>
                         <dd>
                             <ol>
-                                <li nc_type=''><a href="JavaScript:void(0);" name="item_membermember" id="item_membermember" onclick="openItem('member,member,member');">会员管理</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_indexmember_grade" id="item_indexmember_grade" onclick="openItem('index,member_grade,member');">会员级别</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_indexexppoints" id="item_indexexppoints" onclick="openItem('index,exppoints,member');">经验值管理</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_noticenotice" id="item_noticenotice" onclick="openItem('notice,notice,member');">会员通知</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_addpointspoints" id="item_addpointspoints" onclick="openItem('addpoints,points,member');">积分管理</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_predepositpredeposit" id="item_predepositpredeposit" onclick="openItem('predeposit,predeposit,member');">预存款</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_sharesettingsns_sharesetting" id="item_sharesettingsns_sharesetting" onclick="openItem('sharesetting,sns_sharesetting,member');">分享绑定</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_class_listsns_malbum" id="item_class_listsns_malbum" onclick="openItem('class_list,sns_malbum,member');">会员相册</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_tracelistsnstrace" id="item_tracelistsnstrace" onclick="openItem('tracelist,snstrace,member');">买家动态</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_member_tagsns_member" id="item_member_tagsns_member" onclick="openItem('member_tag,sns_member,member');">会员标签</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_chat_logchat_log" id="item_chat_logchat_log" onclick="openItem('chat_log,chat_log,member');">聊天记录</a></li>
+                                <li nc_type=''><a href="JavaScript:void(0);" name="item_membermember" id="item_indexmember" onclick="openItem('index,member,member');">会员管理</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_indexmember_grade" id="item_indexmember_grade" onclick="openItem('index,member_grade,member');">会员级别</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_indexexppoints" id="item_indexexppoints" onclick="openItem('index,exppoints,member');">经验值管理</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_noticenotice" id="item_noticenotice" onclick="openItem('notice,notice,member');">会员通知</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_addpointspoints" id="item_addpointspoints" onclick="openItem('addpoints,points,member');">积分管理</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_predepositpredeposit" id="item_predepositpredeposit" onclick="openItem('predeposit,predeposit,member');">预存款</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_sharesettingsns_sharesetting" id="item_sharesettingsns_sharesetting" onclick="openItem('sharesetting,sns_sharesetting,member');">分享绑定</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_class_listsns_malbum" id="item_class_listsns_malbum" onclick="openItem('class_list,sns_malbum,member');">会员相册</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_tracelistsnstrace" id="item_tracelistsnstrace" onclick="openItem('tracelist,snstrace,member');">买家动态</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_member_tagsns_member" id="item_member_tagsns_member" onclick="openItem('member_tag,sns_member,member');">会员标签</a></li><li nc_type=''><a href="JavaScript:void(0);" name="item_chat_logchat_log" id="item_chat_logchat_log" onclick="openItem('chat_log,chat_log,member');">聊天记录</a></li>
                             </ol>
                         </dd>
                     </dl>
