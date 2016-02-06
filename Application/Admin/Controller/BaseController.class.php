@@ -17,4 +17,23 @@ class BaseController extends Controller{
     public function _initialize(){
         $this->_admin_info = session('admin');
     }
+
+
+    protected function successAlert($message, $jumpUrl = '', $time = 3000) {
+        $str = '<script>';
+        $str .='parent.success("' . $message . '",' . $time . ',\'jumpUrl("' . $jumpUrl . '")\');';
+        $str.='</script>';
+        exit($str);
+    }
+
+    protected function errorAlert($message, $time = 3000, $yzm = false) {
+        $str = '<script>';
+        if ($yzm) {
+            $str .='parent.error("' . $message . '",' . $time . ',"yzmCode()");';
+        } else {
+            $str .='parent.error("' . $message . '",' . $time . ');';
+        }
+        $str.='</script>';
+        exit($str);
+    }
 }

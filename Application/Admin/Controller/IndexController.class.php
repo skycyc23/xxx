@@ -18,7 +18,9 @@ class IndexController extends BaseController {
         }
     }
     public function test(){
-        echo "test page";
-        //$this->display();
+//        if(!IS_POST){
+//            $this->errorAlert('error message!');
+//        }
+        $this->display();
     }
 }
