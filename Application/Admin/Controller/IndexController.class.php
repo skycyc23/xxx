@@ -17,10 +17,15 @@ class IndexController extends BaseController {
             $this->display();
         }
     }
+
+    public function demo(){
+        $this->display();
+    }
+
     public function test(){
-//        if(!IS_POST){
-//            $this->errorAlert('error message!');
-//        }
+        if(IS_POST){
+            $this->errorAlert('error message!');
+        }
         $this->display();
     }
 }

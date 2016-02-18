@@ -18,7 +18,6 @@ class BaseController extends Controller{
         $this->_admin_info = session('admin');
     }
 
-
     protected function successAlert($message, $jumpUrl = '', $time = 3000) {
         $str = '<script>';
         $str .='parent.success("' . $message . '",' . $time . ',\'jumpUrl("' . $jumpUrl . '")\');';

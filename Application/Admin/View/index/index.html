@@ -9,11 +9,12 @@
     <script type="text/javascript" src="/Application/Admin/View/resource/js/jquery.cookie.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="/Application/Admin/View/resource/js/html5shiv.js"></script>
-    <script src="/Application/Admin/View/resource/js/respond.min.js"></script>
+    <script type="text/javascript" src="/Application/Admin/View/resource/js/html5shiv.js"></script>
+    <script type="text/javascript" src="/Application/Admin/View/resource/js/respond.min.js"></script>
     <![endif]-->
     <script>
         $(document).ready(function () {
+            //顶部导航上的下拉按钮效果
             $('span.bar-btn').click(function () {
                 $('ul.bar-list').toggle('fast');
             });
@@ -40,6 +41,8 @@
                 $('#item_welcome').addClass('selected');
                 $('#workspace').attr('src',"<{:U('index/welcome')}>");
             }
+            //alert($.cookie('now_location_op')+','+$.cookie('now_location_act')+','+$.cookie('now_location_nav'));
+            //刷新管理中心
             $('#iframe_refresh').click(function(){
                 var fr = document.frames ? document.frames("workspace") : document.getElementById("workspace").contentWindow;;
                 fr.location.reload();
@@ -76,9 +79,7 @@
             if (typeof(act)=='undefined'){var nav = args;}
             $('.actived').removeClass('actived');
             $('#nav_'+nav).addClass('actived');
-
             $('.selected').removeClass('selected');
-
             //show
             $('#mainMenu ul').css('display','none');
             $('#sort_'+nav).css('display','block');
@@ -99,9 +100,9 @@
             }else{
                 //左侧菜单事件
                 //location
-//                $.cookie('now_location_nav',nav);
-//                $.cookie('now_location_act',act);
-//                $.cookie('now_location_op',op);
+                $.cookie('now_location_nav',nav);
+                $.cookie('now_location_act',act);
+                $.cookie('now_location_op',op);
                 $("a[name='item_"+op+act+"']").addClass('selected');
                 //crumbs
                 $('#crumbs').html('<span>'+$('#nav_'+nav+' > span').html()+'</span><span class="arrow">&nbsp;</span><span>'+$('#item_'+op+act).html()+'</span>');
@@ -203,10 +204,13 @@
         }
 
     </script>
+    <link href="/Application/Admin/View/resource/js/dialog.css" rel="stylesheet" />
+    <script type="text/javascript" src="/Application/Admin/View/resource/js/dialog.js"></script>
 </head>
 
 <body style="min-width: 1200px; margin: 0px; ">
 <!--<iframe id="msg_frm"></iframe>-->
+<iframe id="msg_frm_outer" name="msg_frm_outer" style="display: none; padding: 0; margin: 0;"></iframe><!--用于外层的消息提示iframe-->
 <div id="pagemask"></div>
 <div id="dialog" style="display:none">
     <div class="title">
@@ -447,7 +451,7 @@
                                     <a href="JavaScript:void(0);" name="item_aboutusdashboard" id="item_aboutusdashboard" onclick="openItem('aboutus,dashboard,dashboard');">关于我们</a>
                                 </li>
                                 <li nc_type=''>
-                                    <a href="JavaScript:void(0);" name="item_indexsetting" id="item_basesetting" onclick="openItem('index,setting,dashboard');">站点设置</a>
+                                    <a href="JavaScript:void(0);" name="item_indexsetting" id="item_indexsetting" onclick="openItem('index,setting,dashboard');">站点设置</a>
                                 </li>
                                 <li nc_type=''>
                                     <a href="JavaScript:void(0);" name="item_membermember" id="item_membermember" onclick="openItem('member,member,dashboard');">会员管理</a>
@@ -459,7 +463,10 @@
                                     <a href="JavaScript:void(0);" name="item_goodsgoods" id="item_goodsgoods" onclick="openItem('goods,goods,dashboard');">XXX管理</a>
                                 </li>
                                 <li nc_type=''>
-                                    <a href="JavaScript:void(0);" name="item_indexorder" id="item_indexorder" onclick="openItem('test,index,dashboard');">测试页面</a>
+                                    <a href="JavaScript:void(0);" name="item_indexorder" id="item_testindex" onclick="openItem('test,index,dashboard');">测试页面</a>
+                                </li>
+                                <li nc_type=''>
+                                    <a href="JavaScript:void(0);" name="item_indexorder" id="item_demoindex" onclick="openItem('demo,index,dashboard');">DEMO页面</a>
                                 </li>
                             </ol>
                         </dd>

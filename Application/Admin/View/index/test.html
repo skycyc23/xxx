@@ -1,15 +1,15 @@
 <include file="public:iframe_header"  />
 <script type="text/javascript">
-
+//添加特殊需要的js代码
 </script>
 <div class="page">
     <div class="fixed-bar">
         <div class="item-title">
             <h3>系统信息</h3>
             <ul class="tab-base">
-                <li><a href="javascript:void(0);"><span>管理1</span></a></li>
+                <li><a href="#"><span>管理1</span></a></li>
                 <li><a class="current"><span>管理2</span></a></li>
-                <li><a href="javascript:void(0);"><span>管理3</span></a></li>
+                <li><a href="http://www.baidu.com"><span>管理3</span></a></li>
             </ul>
         </div>
     </div>
@@ -34,7 +34,7 @@
             <li class="current">店铺信息</li>
             <li>注册信息</li>
         </ul>
-        <form name="form1" method="post" target="msg_frm">
+        <form name="form1" method="post" target="msg_frm_outer">
             <table class="table tb-type2">
                 <tbody>
                 <!--不能或不需要修改的值-->
@@ -56,7 +56,7 @@
                 </tbody>
                 <tfoot id="submit-holder">
                 <tr class="tfoot">
-                    <td colspan="2"><a class="btn" onclick="document.form1.submit()" href="javascript:void(0);"></a></td>
+                    <td colspan="2"><a class="btn" onclick="document.form1.submit()" href="javascript:void(0);"><span>提交</span></a></td>
                 </tr>
                 </tfoot>
             </table>
