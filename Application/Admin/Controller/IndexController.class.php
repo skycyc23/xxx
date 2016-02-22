@@ -19,6 +19,9 @@ class IndexController extends BaseController {
     }
 
     public function demo(){
+        if(IS_POST){
+            $this->errorAlert('error message!');
+        }
         $this->display();
     }
 
