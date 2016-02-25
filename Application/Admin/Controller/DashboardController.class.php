@@ -11,14 +11,14 @@ namespace Admin\Controller;
 
 class DashboardController extends BaseController{
     public function welcome(){
-        echo "welcome";
+        //echo "welcome";
     }
 
     /**
      * 关于我们
      */
     public function aboutus(){
-        echo "关于我们";
+       $this->display('index/aboutus');
     }
 
     public function base(){

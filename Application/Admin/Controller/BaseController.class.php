@@ -15,6 +15,7 @@ class BaseController extends Controller{
     protected $_config = array();
     protected $_permission;//权限信息
     public function _initialize(){
+        header();
         $this->_admin_info = session('admin');
     }
 

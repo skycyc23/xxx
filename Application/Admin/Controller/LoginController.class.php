@@ -14,7 +14,11 @@ use Think\Verify;
 class LoginController extends Controller{
 
     public function index(){
-        $this->display();
+        if(IS_POST){
+            //验证登录
+        }else{
+            $this->display();
+        }
     }
 
     public function logout(){
@@ -29,7 +33,8 @@ class LoginController extends Controller{
         $Verify->expire = 60;//验证码有效期60秒
         $Verify->length = 4;
         $Verify->fontSize = 64;
-        $Verify->codeSet = '2345679abcdefghijkmnpqrstuvwxyz';//指定验证码字符
+        $Verify->codeSet = '2345678ABCDEFGHJKLMNPQRTUVWXY';//指定验证码字符
+        $Verify->useCurve = false;//取消画混淆曲线
         $Verify->entry();
     }
 
